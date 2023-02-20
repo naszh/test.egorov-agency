@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.main`
   margin: 0 auto;
+  flex: 1 0 auto;
   text-align: center;
 `;
 
 export const TextHeader = styled.h1`
   margin-bottom: 8px;
   font-size: 72px;
-  font-weight: 700;
+  font-family: 'Poppins-Bold', sans-serif;
   line-height: 104%;
   text-transform: uppercase;
   color: #162c4e;

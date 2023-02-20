@@ -1,3 +1,4 @@
+import { Timer } from '../timer';
 import {
   Wrapper,
   TextHeader,
@@ -9,12 +10,15 @@ import {
 } from './styled';
 
 export const Main = () => {
+  const date = new Date(2023, 4, 31);
+
   return (
     <Wrapper>
       <TextHeader>Under Construction</TextHeader>
       <HeaderBottom>
         We're making lots of improvements and will be back soon
       </HeaderBottom>
+      <Timer date={date} />
       <Container>
         <Paragraph>Check our event page when you wait:</Paragraph>
         <Button>

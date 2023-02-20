@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
   position: relative;
+  flex: 0 0 auto;
 `;
 
 export const LeftPic = styled.picture`
