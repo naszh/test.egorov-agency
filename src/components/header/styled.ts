@@ -15,4 +15,11 @@ export const RightPic = styled(LeftPic)`
 
 export const Logotype = styled.img`
   margin: 60px auto 93px;
+  @media (max-width: 900px) {
+    margin: 100px auto 166px;
+  }
+  @media (max-width: 435px) {
+    margin: 80px auto 66px;
+    width: 128px;
+  }
 `;

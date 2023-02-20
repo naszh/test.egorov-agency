@@ -1,5 +1,12 @@
 import { useCountdown } from '../../hooks';
-import { Backdrop, Container, Counter, Period, Wrapper } from './styled';
+import {
+  Backdrop,
+  Container,
+  Counter,
+  Period,
+  PeriodPP,
+  Wrapper,
+} from './styled';
 
 export const Timer = ({ date }: { date: Date }) => {
   const [days, hours, minutes, seconds] = useCountdown(date);
@@ -11,6 +18,7 @@ export const Timer = ({ date }: { date: Date }) => {
         <Container>
           <Backdrop src='../../../imgs/backdrop-red.png' alt='' />
           <Period>Days</Period>
+          <PeriodPP>DD</PeriodPP>
         </Container>
       </div>
       <Counter>:</Counter>
@@ -19,6 +27,7 @@ export const Timer = ({ date }: { date: Date }) => {
         <Container>
           <Backdrop src='../../../imgs/backdrop-red.png' alt='' />
           <Period>Hours</Period>
+          <PeriodPP>HH</PeriodPP>
         </Container>
       </div>
       <Counter>:</Counter>
@@ -27,6 +36,7 @@ export const Timer = ({ date }: { date: Date }) => {
         <Container>
           <Backdrop src='../../../imgs/backdrop-red.png' alt='' />
           <Period>Minutes</Period>
+          <PeriodPP>MM</PeriodPP>
         </Container>
       </div>
       <Counter>:</Counter>
@@ -35,6 +45,7 @@ export const Timer = ({ date }: { date: Date }) => {
         <Container>
           <Backdrop src='../../../imgs/backdrop-red.png' alt='' />
           <Period>Seconds</Period>
+          <PeriodPP>SS</PeriodPP>
         </Container>
       </div>
     </Wrapper>

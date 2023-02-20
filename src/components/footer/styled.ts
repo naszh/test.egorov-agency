@@ -19,14 +19,25 @@ export const InputContainer = styled.div`
     border-radius: 50%;
     background: #df2224;
     cursor: pointer;
+    @media (max-width: 900px) {
+      top: 4px;
+      right: 4px;
+      width: 33px;
+      height: 33px;
+    }
   }
   &::after {
     position: absolute;
     top: 20px;
     right: 19px;
-    content: url('../../../imgs/arrow-right.png');
+    content: url('../../../imgs/arrow-right1.svg');
     height: 20px;
     cursor: pointer;
+    @media (max-width: 900px) {
+      top: 9px;
+      right: 11px;
+      content: url('../../../imgs/arrow-right.svg');
+    }
   }
 `;
 
@@ -44,5 +55,18 @@ export const InputEmail = styled.input`
   &::placeholder {
     font-family: 'Roboto', sans-serif;
     color: rgba(0, 0, 0, 0.6);
+  }
+  @media (max-width: 900px) {
+    margin: 60px auto;
+    padding: 10px 20px;
+    width: 360px;
+    height: 41px;
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 435px) {
+    margin: 50px auto;
+    width: 280px;
   }
 `;

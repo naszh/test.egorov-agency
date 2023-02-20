@@ -4,6 +4,9 @@ export const Wrapper = styled.main`
   margin: 0 auto;
   flex: 1 0 auto;
   text-align: center;
+  @media (max-width: 435px) {
+    padding: 0 20px;
+  }
 `;
 
 export const TextHeader = styled.h1`
@@ -14,19 +17,39 @@ export const TextHeader = styled.h1`
   text-transform: uppercase;
   color: #162c4e;
   opacity: 39%;
+  @media (max-width: 900px) {
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+  @media (max-width: 435px) {
+    margin-bottom: 16px;
+  }
 `;
 
 export const Paragraph = styled.p`
   margin: auto;
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
 `;
 
 export const HeaderBottom = styled(Paragraph)`
   max-width: 423px;
   margin-bottom: 32px;
+  @media (max-width: 900px) {
+    max-width: 286px;
+    margin-bottom: 40px;
+  }
 `;
 
 export const Container = styled.section`
   margin: 72px auto 76px;
+  @media (max-width: 900px) {
+    margin: 40px auto 169px;
+  }
+  @media (max-width: 435px) {
+    margin-bottom: 86px;
+  }
 `;
 
 export const Button = styled.button`
@@ -44,12 +67,18 @@ export const Button = styled.button`
     position: absolute;
     top: 20px;
     right: 20px;
-    content: url('../../../imgs/arrow-right.png');
+    content: url('../../../imgs/arrow-right1.svg');
     height: 20px;
+  }
+  @media (max-width: 900px) {
+    margin-top: 15px;
   }
 `;
 
 export const TextButton = styled(Paragraph)`
   text-align: left;
   color: #ffffff;
+  @media (max-width: 900px) {
+    font-size: 18px;
+  }
 `;
