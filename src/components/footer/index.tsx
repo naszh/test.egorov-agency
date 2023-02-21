@@ -15,7 +15,10 @@ export const Footer = () => {
   const [error, setError] = useState<string>('Email is empty');
   const [formValid, setFormValid] = useState<boolean>(false);
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
-  const [textPopup, setTextPopup] = useState<any>({});
+  const [textPopup, setTextPopup] = useState<{ header: string; msg: string }>({
+    header: '',
+    msg: '',
+  });
 
   useEffect(() => {
     error ? setFormValid(false) : setFormValid(true);
@@ -59,6 +62,7 @@ export const Footer = () => {
 
     sendData(email, openSuccess, openFailed);
     setEmail('');
+    setFormValid(false);
   };
 
   return (
