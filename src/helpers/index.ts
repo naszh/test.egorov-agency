@@ -1,4 +1,8 @@
-export const sendData = async (email: string) => {
+export const sendData = async (
+  email: string,
+  openSuccess: { (): void; (): void },
+  openFailed: () => void
+) => {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
@@ -13,8 +17,10 @@ export const sendData = async (email: string) => {
     });
 
     const message = await response.json();
+    openSuccess();
     console.log(message);
   } catch (err) {
+    openFailed();
     console.log(err);
   }
 };

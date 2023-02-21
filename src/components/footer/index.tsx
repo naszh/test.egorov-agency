@@ -15,6 +15,7 @@ export const Footer = () => {
   const [error, setError] = useState<string>('Email is empty');
   const [formValid, setFormValid] = useState<boolean>(false);
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
+  const [textPopup, setTextPopup] = useState<any>({});
 
   useEffect(() => {
     error ? setFormValid(false) : setFormValid(true);
@@ -39,8 +40,24 @@ export const Footer = () => {
 
   const sendHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    sendData(email);
-    setPopupOpen(true);
+
+    const openSuccess = () => {
+      setPopupOpen(true);
+      setTextPopup({
+        header: 'Success!',
+        msg: 'You have successfully subscribed to the email newsletter',
+      });
+    };
+
+    const openFailed = () => {
+      setPopupOpen(true);
+      setTextPopup({
+        header: 'Failed! :(',
+        msg: 'Something went wrong! Try again',
+      });
+    };
+
+    sendData(email, openSuccess, openFailed);
     setEmail('');
   };
 
@@ -60,7 +77,13 @@ export const Footer = () => {
           {emailDirty && error && <Message>{error}</Message>}
         </InputContainer>
       </Wrapper>
-      {isPopupOpen && <Popup onClose={() => setPopupOpen(false)} />}
+      {isPopupOpen && (
+        <Popup
+          header={textPopup.header}
+          msg={textPopup.msg}
+          onClose={() => setPopupOpen(false)}
+        />
+      )}
     </>
   );
 };

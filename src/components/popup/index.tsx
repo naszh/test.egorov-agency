@@ -8,7 +8,15 @@ import {
   PopupMessage,
 } from './styled';
 
-export const Popup = ({ onClose }: { onClose: () => void }) => {
+export const Popup = ({
+  header,
+  msg,
+  onClose,
+}: {
+  header: string;
+  msg: string;
+  onClose: () => void;
+}) => {
   const rootEl = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,10 +30,8 @@ export const Popup = ({ onClose }: { onClose: () => void }) => {
     <Container>
       <PopupContent ref={rootEl}>
         <Cancel src='../../../imgs/cancel.svg' onClick={onClose} />
-        <PopupHeader>Success!</PopupHeader>
-        <PopupMessage>
-          You have successfully subscribed to the email newsletter
-        </PopupMessage>
+        <PopupHeader>{header}</PopupHeader>
+        <PopupMessage>{msg}</PopupMessage>
         <PopupButton onClick={onClose}>Close</PopupButton>
       </PopupContent>
     </Container>
