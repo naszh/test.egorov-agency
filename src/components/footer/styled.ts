@@ -5,37 +5,41 @@ export const Wrapper = styled.footer`
   background: #162c4e;
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   position: relative;
   margin: auto;
   width: fit-content;
-  &::before {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    content: '';
-    width: 43px;
-    height: 43px;
-    border-radius: 50%;
-    background: #df2224;
-    cursor: pointer;
-    @media (max-width: 900px) {
-      top: 4px;
-      right: 4px;
-      width: 33px;
-      height: 33px;
-    }
+`;
+
+export const InputButton = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: #df2224;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+  @media (max-width: 900px) {
+    top: 4px;
+    right: 4px;
+    width: 33px;
+    height: 33px;
   }
   &::after {
     position: absolute;
-    top: 20px;
-    right: 19px;
+    top: 12px;
+    right: 11px;
     content: url('../../../imgs/arrow-right1.svg');
-    height: 20px;
-    cursor: pointer;
+    cursor: inherit;
     @media (max-width: 900px) {
-      top: 9px;
-      right: 11px;
+      top: 5px;
+      right: 8px;
       content: url('../../../imgs/arrow-right.svg');
     }
   }
@@ -69,4 +73,12 @@ export const InputEmail = styled.input`
     margin: 50px auto;
     width: 280px;
   }
+`;
+
+export const Message = styled.span`
+  position: absolute;
+  top: -50%;
+  left: 25%;
+  font-size: 14px;
+  color: red;
 `;

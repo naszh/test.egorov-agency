@@ -1,13 +1,9 @@
-import { Footer } from './components/footer';
-import { Header } from './components/header';
-import { Main } from './components/main';
+import { MainPage } from './pages/mainPage';
 
 export const App = () => {
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      <MainPage />
     </>
   );
 };

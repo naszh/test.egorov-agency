@@ -22,7 +22,12 @@ export const Header = () => {
         />
         <img src='../../../imgs/right.png' alt='Right side backdrop' />
       </RightPic>
-      <Logotype src='../../../imgs/logo.png' alt='Logotype of LEAD ADVISORS' />
+      <a href='/'>
+        <Logotype
+          src='../../../imgs/logo.png'
+          alt='Logotype of LEAD ADVISORS'
+        />
+      </a>
     </Wrapper>
   );
 };
