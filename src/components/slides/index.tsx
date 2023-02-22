@@ -32,6 +32,7 @@ export const Slides = () => {
               key={event.id}
               active={active === event.id}
               onClick={() => toggleActive(event.id)}
+              image={event.image}
             >
               <LeftSide active={active === event.id}>
                 <EventIdBig>{event.id}</EventIdBig>

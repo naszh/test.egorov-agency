@@ -38,14 +38,16 @@ export const SlidesList = styled.ul`
   }
 `;
 
-export const Slide = styled.li.attrs((props: { active: boolean }) => props)`
+export const Slide = styled.li.attrs(
+  (props: { active: boolean; image: string }) => props
+)`
   position: relative;
   overflow: hidden;
   width: ${props => (props.active ? '59%' : '5%')};
   height: 680px;
   border-bottom: 2px solid #df2224;
   cursor: pointer;
-  background-image: url('../../../imgs/hawaiian.png');
+  background-image: url(${props => props.image});
   background-size: cover;
   background-position-x: center;
 
