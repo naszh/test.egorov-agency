@@ -23,7 +23,7 @@ export const Slides = () => {
   };
 
   return (
-    <Container>
+    <Container id='scroll'>
       <Title>All events</Title>
       <SlidesList>
         {allEvents.map((event: EventsType) => {
@@ -35,8 +35,10 @@ export const Slides = () => {
             >
               <LeftSide active={active === event.id}>
                 <EventIdBig>{event.id}</EventIdBig>
-                <EventTitle>{event.header}</EventTitle>
-                <EventId>{event.id}</EventId>
+                <EventTitle active={active === event.id}>
+                  {event.header}
+                </EventTitle>
+                <EventId active={active === event.id}>{event.id}</EventId>
                 <MoreInfo active={active === event.id}>
                   <EventName>{event.header}</EventName>
                   <EventDate>{event.date}</EventDate>

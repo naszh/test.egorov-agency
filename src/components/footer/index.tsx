@@ -67,6 +67,14 @@ export const Footer = () => {
     setFormValid(false);
   };
 
+  const scrollHandler = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    document!.querySelector('#scroll')!.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <>
       <Wrapper>
@@ -82,7 +90,7 @@ export const Footer = () => {
           <InputButton type='submit' disabled={!formValid} />
           {emailDirty && error && <Message>{error}</Message>}
         </InputContainer>
-        <Other>
+        <Other onClick={scrollHandler}>
           Other Events <ArrowDown src='../../../imgs/arrow-down.svg' />
         </Other>
       </Wrapper>

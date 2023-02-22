@@ -91,6 +91,13 @@ export const Other = styled.div`
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
+  @media (max-width: 1024px) {
+    top: unset;
+    bottom: 7%;
+    right: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const ArrowDown = styled.img`

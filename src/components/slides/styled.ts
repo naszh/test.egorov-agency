@@ -20,6 +20,9 @@ export const Container = styled.section`
   @media (max-width: 1500px) {
     margin: 10px auto 80px;
   }
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
 `;
 
 export const SlidesList = styled.ul`
@@ -28,6 +31,9 @@ export const SlidesList = styled.ul`
   gap: 4px;
   width: 100%;
   overflow: hidden;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const Slide = styled.li.attrs((props: { active: boolean }) => props)`
@@ -49,6 +55,10 @@ export const Slide = styled.li.attrs((props: { active: boolean }) => props)`
 
   @media (max-width: 1500px) {
     height: 470px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: ${props => (props.active ? '470px' : '70px')};
   }
 
   &::after {
@@ -76,7 +86,9 @@ export const Slide = styled.li.attrs((props: { active: boolean }) => props)`
   }
 `;
 
-export const EventTitle = styled.span`
+export const EventTitle = styled.span.attrs(
+  (props: { active: boolean }) => props
+)`
   position: absolute;
   bottom: 13%;
   left: 18px;
@@ -89,9 +101,17 @@ export const EventTitle = styled.span`
   @media (max-width: 1500px) {
     font-size: 18px;
   }
+  @media (max-width: 1024px) {
+    display: ${props => (props.active ? 'none' : 'block')};
+    bottom: 55%;
+    left: 13%;
+    font-size: 24px;
+    writing-mode: unset;
+    transform: unset;
+  }
 `;
 
-export const EventId = styled.span`
+export const EventId = styled.span.attrs((props: { active: boolean }) => props)`
   position: absolute;
   bottom: 3%;
   left: 12px;
@@ -102,6 +122,11 @@ export const EventId = styled.span`
   color: #ffffff;
   @media (max-width: 1500px) {
     font-size: 24px;
+  }
+  @media (max-width: 1024px) {
+    display: ${props => (props.active ? 'none' : 'block')};
+    bottom: 50%;
+    font-size: 28px;
   }
 `;
 
@@ -115,6 +140,12 @@ export const LeftSide = styled.div.attrs((props: { active: boolean }) => props)`
   background: ${props => (props.active ? 'rgba(18, 18, 18, 0.8)' : '')};
   backdrop-filter: ${props => (props.active ? 'blur(20px)' : '')};
   z-index: 1;
+  @media (max-width: 1024px) {
+    bottom: 0;
+    top: unset;
+    width: 100%;
+    height: 40%;
+  }
 `;
 
 export const EventIdBig = styled.span`
@@ -126,6 +157,10 @@ export const EventIdBig = styled.span`
   @media (max-width: 1500px) {
     font-size: 200px;
   }
+  @media (max-width: 1024px) {
+    right: -3%;
+    font-size: 120px;
+  }
 `;
 
 export const MoreInfo = styled.div.attrs((props: { active: boolean }) => props)`
@@ -134,6 +169,11 @@ export const MoreInfo = styled.div.attrs((props: { active: boolean }) => props)`
   bottom: 7%;
   left: 22%;
   width: 75%;
+  @media (max-width: 1024px) {
+    left: 5%;
+    bottom: 15%;
+    width: 30%;
+  }
 `;
 
 export const EventName = styled.p`
