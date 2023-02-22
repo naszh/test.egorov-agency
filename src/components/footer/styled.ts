@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.footer`
+  position: relative;
   flex: 0 0 auto;
   background: #162c4e;
 `;
@@ -81,4 +82,19 @@ export const Message = styled.span`
   left: 25%;
   font-size: 14px;
   color: red;
+`;
+
+export const Other = styled.div`
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+`;
+
+export const ArrowDown = styled.img`
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
 `;

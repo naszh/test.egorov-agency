@@ -7,6 +7,8 @@ import {
   InputContainer,
   InputButton,
   Message,
+  Other,
+  ArrowDown,
 } from './styled';
 
 export const Footer = () => {
@@ -80,6 +82,9 @@ export const Footer = () => {
           <InputButton type='submit' disabled={!formValid} />
           {emailDirty && error && <Message>{error}</Message>}
         </InputContainer>
+        <Other>
+          Other Events <ArrowDown src='../../../imgs/arrow-down.svg' />
+        </Other>
       </Wrapper>
       {isPopupOpen && (
         <Popup
