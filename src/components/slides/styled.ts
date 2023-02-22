@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { HeaderAnim } from '../main/styled';
 
 export const Title = styled.h2`
   margin: 70px auto 40px;
@@ -9,6 +10,7 @@ export const Title = styled.h2`
   text-transform: uppercase;
   color: #162c4e;
   opacity: 39%;
+  animation: 1s ease-out 0s 1 ${HeaderAnim};
   @media (max-width: 900px) {
     font-size: 36px;
   }

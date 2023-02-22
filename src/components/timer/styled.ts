@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { DefaultAnim } from '../main/styled';
 
 export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
+  animation: 1s ease-out 0s 1 ${DefaultAnim};
   @media (max-width: 900px) {
     gap: 12px;
   }

@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const HeaderAnim = keyframes`
+  0% { transform: translateY(-20%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0.39; }
+`;
+
+export const DefaultAnim = keyframes`
+  0% { transform: translateY(-30%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+`;
 
 export const Wrapper = styled.main`
   margin: 0 auto;
@@ -17,6 +27,7 @@ export const TextHeader = styled.h1`
   text-transform: uppercase;
   color: #162c4e;
   opacity: 39%;
+  animation: 1s ease-out 0s 1 ${HeaderAnim};
   @media (max-width: 900px) {
     margin-bottom: 20px;
     font-size: 36px;
@@ -28,6 +39,7 @@ export const TextHeader = styled.h1`
 
 export const Paragraph = styled.p`
   margin: auto;
+  animation: 1s ease-out 0s 1 ${DefaultAnim};
   @media (max-width: 900px) {
     font-size: 16px;
   }
@@ -44,6 +56,7 @@ export const HeaderBottom = styled(Paragraph)`
 
 export const Container = styled.section`
   margin: 72px auto 76px;
+  animation: 1s ease-out 0s 1 ${DefaultAnim};
   @media (max-width: 900px) {
     margin: 40px auto 169px;
   }
